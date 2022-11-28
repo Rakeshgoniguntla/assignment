@@ -13,7 +13,7 @@ pipeline {
 					
 					success {
 							echo "Archiving the Artifacts"
-							archiveArtifacts artifacts: '**/target/*.exe'
+							archiveArtifacts artifacts: '**/*.exe'
 					}
 				}
 			}
