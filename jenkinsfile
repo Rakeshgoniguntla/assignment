@@ -1,0 +1,22 @@
+pipeline {
+	agent any 
+		stages {
+			stage ('Build')
+				stage {
+					steps {
+						sh '''
+						cd /var/lib/jenkins/workspace/assgn2
+						make 
+						'''
+					}
+				
+					post {
+					
+					success {
+							echo "Archiving the Artifacts"
+							archiveArtifacts artifacts: '**/target/*.exe'
+				}
+			}
+		} 
+	}
+}
